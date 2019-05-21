@@ -33,6 +33,7 @@ print $menu_bar;
 print $extra;
 print $extra2;
 print $extra_info;
+
 if ($use_shortcuts) include("$include_path/shortcuts/circ.sht");
 	
 

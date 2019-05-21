@@ -93,6 +93,11 @@ switch($categ) {
 	case 'dupl_expl':
 		include('./catalog/expl/dupl_expl.inc.php');
 		break;
+	// SENIA
+	case 'dupl_expl_bllibres':
+                include('./catalog/expl/dupl_expl_bllibres.inc.php');
+                break;
+
 	case 'search':
 		include('./catalog/notices/search/main.inc.php');
 		break;
