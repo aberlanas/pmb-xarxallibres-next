@@ -468,7 +468,7 @@ class exemplaire {
 					</script>
 					<input type='button' class='bouton' value=\"${msg['63']}\" name='del_ex' id='del_ex' onClick=\"unload_off();confirm_delete();\" />";
 				$dupliquer = "&nbsp;<input type='button' class='bouton' value=\"".$msg['dupl_expl_bt']."\" name='dupl_ex' id='dupl_ex' onClick=\"unload_off();document.location='./catalog.php?categ=dupl_expl&id=".$this->id_notice."&cb=".urlencode($this->cb)."&expl_id=".$this->expl_id."' ; \" />";
-			// SENIA
+			// XARXA
 			$dupliquer_bllibres = "&nbsp;<input type='button' class='bouton' value='Duplicar Banc Llibres' name='dupl_ex_bllibres' id='dupl_ex_bllibres' onClick=\"unload_off();document.location='./catalog.php?categ=dupl_expl_bllibres&id=.$this->id_notice.&cb=".urlencode($this->cb)."&expl_id=".$this->expl_id."' ; \" />
                         ";
 			}
@@ -477,7 +477,7 @@ class exemplaire {
 		
 		$form = str_replace('!!supprimer!!', $supprimer, $form);
 		$form = str_replace('!!dupliquer!!', $dupliquer, $form);
-		//SENIA
+		//XARXA
 		$form = str_replace('!!dupliquer_bllibres!!', $dupliquer_bllibres, $form);
 		$form = str_replace('!!modifier!!', $modifier, $form);
 				

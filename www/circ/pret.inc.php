@@ -3,7 +3,6 @@
 // © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: pret.inc.php,v 1.132.2.4 2017-12-29 16:02:26 dgoron Exp $
-
 if (stristr($_SERVER['REQUEST_URI'], ".inc.php")) die("no access");
 
 if(!isset($confirm_pret)) $confirm_pret = '';
@@ -43,6 +42,8 @@ define ('ALREADY_BORROWED', 128); // ce document est emprunté par un autre empru
 define ('HAS_RESA_PLANNED_FALSE', 256); //Les prévisions sur le document sont égales ou supérieures au nb d'exemplaires disponibles
 define ('IS_TRUSTED',512); //l'exemplaire est monopolisé
 define ('IS_GROUP',1024); //l'exemplaire fait parti d'un groupe d'exemplaires
+
+	print "ANGEL";
 $affichage = "";
 $warning_text='';
 $dispo_text='';
@@ -182,6 +183,7 @@ function magnetise(commande){
 								$erreur_affichage.= "<input type='button' class='bouton' value='${msg[76]}' onClick=\"document.location='./circ.php?categ=pret&id_empr=$id_empr'\" />";
 								$erreur_affichage.= "&nbsp;<input type='button' class='bouton' value='${msg[389]}' onClick=\"document.location='./circ.php?categ=pret&id_empr=$id_empr&cb_doc=$cb_doc&expl_todo=1&confirm=$confirm'\" />";
 								$erreur_affichage.= "</div></div><br />";
+								
 								$empr = new emprunteur($id_empr, $erreur_affichage, FALSE, 1);
 								$affichage = $empr -> fiche;
 								print pmb_bidi($affichage);
@@ -1278,3 +1280,4 @@ function get_display_custom_fields($id_empr,$id_expl) {
 		}
 	}
 }
+

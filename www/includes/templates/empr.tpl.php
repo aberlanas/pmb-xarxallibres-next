@@ -276,6 +276,8 @@ if ($pmb_rfid_activate==1 ) {
 		</div>
 		<div class='right'>
 			<input type='button' name='express' class='bouton' value='".$msg['pret_express']."' onClick=\"document.location='./circ.php?categ=express&id_empr=!!id!!&groupID=$groupID".(($pmb_short_loan_management==1)?"&short_loan='+document.getElementById('short_loan').value;":"'")."\" />
+			<!-- XARXA -->
+			<input type='button' name='xarxa' id='xarxa' class='bouton' value='Return Express' onClick=\"document.location='./circ.php?categ=retour_xarxa&id_empr=!!id!!&groupID=$groupID".(($pmb_short_loan_management==1)?"&short_loan='+document.getElementById('short_loan').value;":"'")."\" />
 			<!-- short_loan -->
 		</div>
 	</div>

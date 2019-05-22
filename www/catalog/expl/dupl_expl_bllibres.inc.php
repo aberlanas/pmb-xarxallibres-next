@@ -20,7 +20,7 @@ $notice = new mono_display($id, 1, './catalog.php?categ=modif&id=!!id!!', FALSE)
 print pmb_bidi("<div class='row'><b>".$notice->header."</b><br />");
 print pmb_bidi($notice->isbd."</div>");
 
-// SENIA
+// XARXA
 
 print "<form action='./bllibres_duplica_exemplar.php' method='get'>
  <p>Ejemplar a duplicar <input type='text' name='expl_id' value=$expl_id /></p>

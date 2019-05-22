@@ -23,7 +23,7 @@ if ($_GET['id_empr']) {
 		else $confirmed=1;
 }	
 
-//LA SENIA
+// XARXA
 echo("<hr>");
 echo("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>");
 
@@ -43,7 +43,7 @@ echo "<table id=\"tDev\" ><thead><th>ID</th><th>Titulo</th><th>Estado</th><th>De
 		if (@mysql_num_rows($resultData) != 0) {
 			while ($rowData = mysql_fetch_array($resultData)) {	
 				echo "<tr>";
-				echo "<td name=\"valor\"> <a href=http://biblioteca.ieslasenia.org/circ.php?categ=retour&cb_expl=".$rowData[0].">".$rowData[0]."</a></td><td>".$rowData[1]."</td>";
+				echo "<td name=\"valor\"> <a href=circ.php?categ=retour&cb_expl=".$rowData[0].">".$rowData[0]."</a></td><td>".$rowData[1]."</td>";
 				echo "<td> ".$rowData[2]." </td>";
 				echo "<td> <input class=devolucion type=radio name=devolucion".$rowData[0]." value=devolver checked> Devolver</td>";
 				echo "<td> <input class=devolucion type=radio name=devolucion".$rowData[0]." value=retirar> Retirar </td>";
@@ -65,7 +65,7 @@ echo "<table id=\"tDev\" ><thead><th>ID</th><th>Titulo</th><th>Estado</th><th>De
 
 echo "</tbody></table>";
 
-echo "<script src=senia.js></script> ";
+echo "<script src=xarxallibres.js></script> ";
 
 echo("<button id=butDevuelve> Devuelve ya </button>"); 
 

@@ -141,8 +141,8 @@ require '/usr/share/php/fpdf/fpdf.php';
 $pdf=new FPDF('P','in','A4');
 
 // Metadata
-$pdf->SetAuthor('PMB IES La Senia');
-$pdf->SetTitle('Tejuelo Legado IES La Senia');
+$pdf->SetAuthor('PMB Xarxa Llibres');
+$pdf->SetTitle('Tejuelo Legado');
 
 //Otras características
 $pdf->SetDisplayMode('real'); // Mostramos el zoom al 100%
