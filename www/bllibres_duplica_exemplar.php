@@ -64,7 +64,7 @@ for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 			$sql_update_cb= "UPDATE temp_exemplaires SET expl_cb = \"$newcb\";";
 			$sql_insert	= "INSERT INTO exemplaires SELECT * FROM temp_exemplaires;";
 			$sql_drop		=" DROP TABLE temp_exemplaires;";
-			
+				
 			$resultAux = @mysql_query($sql_duplica, $link2);
 			$resultAux = @mysql_query($sql_update_id, $link2);
 			$resultAux = @mysql_query($sql_update_cb, $link2);
