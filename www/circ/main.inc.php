@@ -208,6 +208,13 @@ switch($categ) {
 		echo window_title($database_window_title.$msg["5"]." : ".$msg["14"]);
 		include("./circ/retour.inc.php");
 		break;
+	// SENIA
+	case 'retour_xarxa':
+		echo window_title($database_window_title.$msg["5"]." : ".$msg["14"]."Múltiple");
+		include("./circ/retour_xarxa.inc.php");
+		break;
+	// FIN SENIA
+
 	case 'retour_secouru':
 		include("./circ/retour_secouru_download.inc.php");
 		break;
