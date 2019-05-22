@@ -20,8 +20,8 @@ require_once("$include_path/notice_categories.inc.php");
 $link2 = @mysql_connect(SQL_SERVER, USER_NAME, USER_PASS) OR die("Error MySQL");
 
 function f_rellena_ceros($as_dato) {
-	if(strlen($as_dato)>0 && strlen($as_dato)<9){
-		for($i=strlen($as_dato); $i<9; $i++)
+	if(strlen($as_dato)>0 && strlen($as_dato)<8){
+		for($i=strlen($as_dato); $i<8; $i++)
 			$as_dato="0".$as_dato;}
 	
 	return $as_dato; 
