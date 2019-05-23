@@ -1,16 +1,16 @@
 #!/bin/bash
 
 
-URL="http://biblioteca.ieslasenia.org/circ.php?categ=retour_xarxa&id_empr="
-PDF="http://biblioteca.ieslasenia.org/pdf.php?pdfdoc=liste_pret&id_empr="
-PREST="http://biblioteca.ieslasenia.org/circ.php?categ=pret&form_cb="
+URL="./circ.php?categ=retour_xarxa&id_empr="
+PDF="./pdf.php?pdfdoc=liste_pret&id_empr="
+PREST="./circ.php?categ=pret&form_cb="
 
 
 cat << EOF 
 <html>
 <head>
 
-	<title> IES La Senia </title>
+	<title> IES - XarxaLlibres </title>
 	<meta charset="UTF-8">
 
 	<style>
@@ -58,7 +58,6 @@ for grupo in 4ESOA 4ESOB 4ESOC 3ESOA 3ESOB 3ESOC 2ESOA 2ESOB 2ESOC 2ESOD 1ESOA 1
 	
 		echo "<tr>"
 		echo " <td> <a href=$URL$IDEMPR>$NOMBRE $APELLIDO $APELLIDO_2</a> </td><td> <a href="$PDF$IDEMPR" > Informe PDF </a></td><td><a href="$PREST$f" > Detalles </a></td> "
-		# $sql = "SELECT id_empr FROM `empr` WHERE `empr_cb` = \'10308247\'";
  
 		echo "</tr>"
 	done
