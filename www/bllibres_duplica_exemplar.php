@@ -17,6 +17,8 @@ require_once("$class_path/indexint.class.php");
 require_once("$include_path/notice_authors.inc.php");
 require_once("$include_path/notice_categories.inc.php");
 
+print "<link rel='stylesheet' href='xarxallibres.css'>";
+
 $link2 = @mysql_connect(SQL_SERVER, USER_NAME, USER_PASS) OR die("Error MySQL");
 
 function f_rellena_ceros($as_dato) {
@@ -37,16 +39,32 @@ $resultDataReg = @mysql_query($regsql, $link2);
 if (@mysql_num_rows($resultDataReg) != 0) {
 	while ($rowData = mysql_fetch_array($resultDataReg)) {
 		$id=$rowData['expl_notice'];
-		print "<a href=\"./catalog.php?categ=isbd&id=$id\">Volver al registro</a>";
+		print "<h2><a href=\"./catalog.php?categ=isbd&id=$id\">Volver al registro</a></h2>";
 	}
 }else {
 	$id="";
 }
 
+print "<div class='container'>";
+
+$PASOS=0;
+$FONDO=0;
+
 // Creamos tantas copias como se han indicado 
 for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 	
-	print "<p> Creando copia num $i </p>";
+	if ($bllibres_num_copias < 320){
+	
+		$PASOS=320/$bllibres_num_copias;
+	}else{
+		if ($FONDO>=360){
+			$FONDO=0;
+		}
+		$PASOS=1;
+
+	}
+
+	print "<div class='estilo' style='background-color:hsl(".$FONDO.",50%,50%)'> Copia num $i ";
 	
 	// Obtenemos primero el siguiente cb a aplicar
 	$sql = 'SELECT expl_cb FROM `exemplaires` WHERE expl_cb LIKE \'000%\' ORDER BY `expl_cb` DESC LIMIT 1 ';
@@ -57,7 +75,7 @@ for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 		while ($rowData = mysql_fetch_array($resultData)) {	
 			$cb=$rowData['expl_cb'];
 			$newcb = f_rellena_ceros($cb+1);
-			print "El ultimo codigo de barras es : $cb, asi que asignaremos $newcb <br> <hr> ";
+			print "ID : $newcb <br>" ;
 			
 			$sql_duplica 	= "CREATE TEMPORARY TABLE temp_exemplaires SELECT * FROM exemplaires WHERE expl_id = \"$expl_id\";";
 			$sql_update_id	= "UPDATE temp_exemplaires SET expl_id = \"\";";
@@ -71,7 +89,8 @@ for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 			$resultAux = @mysql_query($sql_insert, $link2);
 			$resultAux = @mysql_query($sql_drop, $link2);
 			
-			
+			$FONDO=$FONDO+$PASOS;
+			print "</div>";
 		}// fin del while
 	}else {
 		print "No hay nada";
@@ -81,6 +100,7 @@ for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 mysql_close();		
 
 
+print "</div>";
 
 
 ?>

@@ -1,0 +1,29 @@
+div .estilo{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+
+    border: solid 2px black;
+    border-radius: 10px;
+    text-align: center;
+
+    display:inline-flex;
+    flex-direction:row;
+    flex-wrap:wrap; 
+  
+    justify-content: center;
+    align-items: center;
+
+
+     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+h1, h2 {
+	text-align: center;	
+}
+
+
+a{
+	text-decoration:none;
+}
