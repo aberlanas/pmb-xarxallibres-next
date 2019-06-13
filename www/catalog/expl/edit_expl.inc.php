@@ -24,7 +24,6 @@ if ($nex->explr_acces_autorise!="INVIS") {
 	print $nex->expl_form("./catalog.php?categ=expl_update&sub=update&org_cb=".urlencode($cb)."&expl_id=".$expl_id, "./catalog.php?categ=isbd&id=$id");
 	print "</div>";
 } else {
-	error_log("ANGEL");
 	print "<div class='row'><div class='colonne10'><img src='./images/error.png' /></div>";
 	print "<div class='colonne-suite'><span class='erreur'>".$msg["err_mod_expl"]."</span>&nbsp;&nbsp;&nbsp;";
 	print "<input type='button' class='bouton' value=\"${msg['bt_retour']}\" name='retour' onClick='history.back(-1);'>";	

@@ -43,7 +43,6 @@ define ('HAS_RESA_PLANNED_FALSE', 256); //Les prévisions sur le document sont ég
 define ('IS_TRUSTED',512); //l'exemplaire est monopolisé
 define ('IS_GROUP',1024); //l'exemplaire fait parti d'un groupe d'exemplaires
 
-	print "ANGEL";
 $affichage = "";
 $warning_text='';
 $dispo_text='';
