@@ -22,8 +22,8 @@ print "<link rel='stylesheet' href='xarxallibres.css'>";
 $link2 = @mysql_connect(SQL_SERVER, USER_NAME, USER_PASS) OR die("Error MySQL");
 
 function f_rellena_ceros($as_dato) {
-	if(strlen($as_dato)>0 && strlen($as_dato)<8){
-		for($i=strlen($as_dato); $i<8; $i++)
+	if(strlen($as_dato)>0 && strlen($as_dato)<9){
+		for($i=strlen($as_dato); $i<9; $i++)
 			$as_dato="0".$as_dato;}
 	
 	return $as_dato; 
@@ -67,7 +67,7 @@ for ($i = 1; $i <= $bllibres_num_copias; $i++) {
 	print "<div class='estilo' style='background-color:hsl(".$FONDO.",50%,50%)'> Copia num $i ";
 	
 	// Obtenemos primero el siguiente cb a aplicar
-	$sql = 'SELECT expl_cb FROM `exemplaires` WHERE expl_cb LIKE \'000%\' ORDER BY `expl_cb` DESC LIMIT 1 ';
+	$sql = 'SELECT expl_cb FROM `exemplaires` WHERE expl_cb LIKE \'0000%\' ORDER BY `expl_cb` DESC LIMIT 1 ';
 	$resultData = @mysql_query($sql, $link2);
 	
 	if (@mysql_num_rows($resultData) != 0) {

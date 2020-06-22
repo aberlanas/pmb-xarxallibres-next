@@ -19,8 +19,9 @@ if ($empr_electronic_loan_ticket && $param_popup_ticket) {
 $ourPDF = new $fpdf('P', 'mm', 'A4');
 $ourPDF->Open();
 
-//requete par rapport à un emprunteur
-$rqt = "select expl_cb from pret, exemplaires where pret_idempr='".$id_empr."' and pret_idexpl=expl_id order by pret_date " ;	
+//requete par rapport à un emprunteu
+// SENIA
+$rqt = "select expl_cb from pret, exemplaires where pret_idempr='".$id_empr."' and pret_idexpl=expl_id and pret_date > '2019-06-01' order by pret_date " ;	
 $req = pmb_mysql_query($rqt) or die($msg['err_sql'].'<br />'.$rqt.'<br />'.pmb_mysql_error());
 $count = pmb_mysql_num_rows($req);
 
