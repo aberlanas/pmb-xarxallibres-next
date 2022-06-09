@@ -6,8 +6,9 @@ Repositorio de codigo para las modificaciones en PHP del PMB de LliureX para dar
 
 # Algunos ejemplos de SQL 
 
--- ACTUALIZANDO expl_cb
+ACTUALIZANDO expl_cb
 
+```sql
 UPDATE temp_xarxa_exemplaires 
 SET expl_cb = CONCAT (expl_cb , 'x')
 WHERE expl_cb IN (
@@ -15,10 +16,11 @@ WHERE expl_cb IN (
     FROM exemplaires
     )
     
+```
  
- 
--- MERGE FINAL
+ MERGE FINAL
 
+```sql
 INSERT INTO exemplaires (
     SELECT * 
     FROM temp_xarxa_exemplaires
@@ -27,3 +29,4 @@ INSERT INTO exemplaires (
         FROM exemplaires
         )
     )
+```
