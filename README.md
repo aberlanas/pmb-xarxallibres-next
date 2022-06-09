@@ -1,3 +1,9 @@
+# PMB Para XarxaLlibres
+
+Repositorio de codigo para las modificaciones en PHP del PMB de LliureX para dar soporte a XarxaLlibres.
+
+
+
 # Algunos ejemplos de SQL 
 
 -- ACTUALIZANDO expl_cb
