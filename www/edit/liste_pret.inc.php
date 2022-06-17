@@ -21,7 +21,8 @@ $ourPDF->Open();
 
 //requete par rapport à un emprunteu
 // SENIA
-$rqt = "select expl_cb from pret, exemplaires where pret_idempr='".$id_empr."' and pret_idexpl=expl_id and pret_date > '2019-06-01' order by pret_date " ;	
+$rqt = "select expl_cb from pret, exemplaires where pret_idempr='".$id_empr."' and pret_idexpl=expl_id and pret_date > '2022-06-07' order by pret_date " ;	
+#$rqt = "select expl_cb from pret, exemplaires where pret_idempr='".$id_empr."' and pret_idexpl=expl_id and pret_date > '2019-06-01' order by pret_date " ;	
 $req = pmb_mysql_query($rqt) or die($msg['err_sql'].'<br />'.$rqt.'<br />'.pmb_mysql_error());
 $count = pmb_mysql_num_rows($req);
 
